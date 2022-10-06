@@ -56,3 +56,11 @@ for filename in os.listdir(args.indir):
                 min_index = i
         print('Closest color: {}'.format(s_colors[min_index]))
         img_lists[min_index][file] = rgb
+
+
+def sort(c_list, base_color):
+    print('\nSorting by color {}'.format(base_color))
+    for key in sorted(c_list.keys(), key=lambda k: color_diff(c_list[k], base_color)):
+        print('{}: {}'.format(key, c_list[key]))
+    return sorted(c_list.items(), key=lambda x: color_diff(x[1], base_color))
+
