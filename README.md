@@ -4,16 +4,16 @@
 
 <ol>
     <li>
-        <a href="#about-the-project">О проекте</a>
+        О проекте
     </li>
     <li>
-    <a href="#getting-started">Начало работы</a>
+    Начало работы
     <ul>
-        <li><a href="#prerequisites">Необходимые компоненты и зависимости</a></li>
-        <li><a href="#installation">Установка</a></li>
+        <li>Необходимые компоненты и зависимости</li>
+        <li>Установка</li>
     </ul>
     </li>
-    <li><a href="#usage">Использование</a></li>
+    <li>Использование</li>
 </ol>
 
 
