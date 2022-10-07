@@ -14,12 +14,14 @@ logging.basicConfig(filename="mylog.log", filemode='w', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 
+# Функция нахождения разницы между цветами в RGB
 def color_diff(c1, c2):
     return math.sqrt((c1[0] - c2[0]) ** 2 + (c1[1] - c2[1]) ** 2 + (c1[2] - c2[2]) ** 2)
 
 
+# Функция сортировки списка цветов по близости к цвету base_color
 def sort(c_list, base_color):
-    logging.info('\nSorting by color {}'.format(base_color))
+    logging.info('Sorting by color {}'.format(base_color))
     for key in sorted(c_list.keys(), key=lambda k: color_diff(c_list[k], base_color)):
         logging.info('{}: {}'.format(key, c_list[key]))
     return sorted(c_list.items(), key=lambda x: color_diff(x[1], base_color))
@@ -53,10 +55,13 @@ try:
         logging.error('No images in input directory')
         print('No images in input directory')
         exit(1)
+
+    logging.info('-------------------')
+    logging.info('Finding dominant color and closest color in palette for each image')
     for filename in os.listdir(args.indir):
         file = os.path.join(args.indir, filename)
         if os.path.isfile(file):
-            logging.info('\nProcessing {}'.format(file))
+            logging.info('Processing {}'.format(file))
             img = Image.open(file)
             rgb = img.resize(new_size).getpixel((0, 0))
             logging.info('RGB: {}'.format(rgb))
@@ -76,7 +81,10 @@ except FileNotFoundError:
           ' or use -indir argument.')
     exit(1)
 
+
 print('Sorted images:')
+logging.info('-------------------')
+logging.info('Sorting images by color')
 for i, color in enumerate(s_colors):
     if not os.path.exists(args.outdir):
         os.makedirs(args.outdir)
@@ -94,4 +102,6 @@ for i, color in enumerate(s_colors):
         img.save(
             os.path.join(args.outdir, str(i) + '_' + str(j) + '_' + colors_names[i] + '_' + os.path.basename(file)))
         j += 1
-logging.info('\nDone')
+
+logging.info('-------------------')
+logging.info('Done')
