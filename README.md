@@ -24,7 +24,14 @@
 Проект по курсу "Компьютерная графика" в НИУ ВШЭ МИЭМ.
 Реализация алгоритма сортировки изображений по цветам спектра.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+В репозитории находятся файлы и папки:
+* `s_sort.py` - исполняемый файл программы
+* `requirements.txt` - файл с зависимостями
+* `test-dataset` - директория с тестовым датасетом
+* `output` - директория с отсортированными изображениями из тестового датасета
+* `.gitignore` - список игнорируемых файлов и директорий
+* `README.md` - описание проекта
+
 
 
 <!-- GETTING STARTED -->
@@ -62,7 +69,7 @@
    python s_sort.py
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
@@ -87,4 +94,13 @@
 
 Во время выполнения программа ведет логи о промежуточных действиях в файле `mylog.log`. Логи ведутся только по
 последнему запуску и каждый раз перезаписываются.
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+## Acknowledgments
+
+Во время работы над проектом были изучены следующе источники:
+* [Компьютерная графика: основы](https://stepik.org/course/419/)
+* [Spectral color](https://en.wikipedia.org/wiki/Spectral_color)
+* [Color difference](https://en.wikipedia.org/wiki/Color_difference)
+* [COLOR SCIENCE](http://www.midnightkite.com/color.html)
